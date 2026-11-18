@@ -34,15 +34,33 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
   return (
     <section
-      className="w-full py-28 md:py-36 overflow-hidden relative bg-[#c9dcec]"
-      style={{ backgroundImage: 'url("/sky/jewel-curtain.jpg")', backgroundSize: 'cover', backgroundPosition: 'top center' }}
+      className="w-full pt-10 pb-40 sm:pb-52 md:pb-64 overflow-hidden relative bg-[#eef5fc]"
+      style={{ backgroundImage: 'url("/sky/bow-sky.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white/40" />
-      <Bloom variant={1} className="w-24 md:w-32 bottom-8 left-4 md:left-16" />
-      <Bloom variant={2} className="w-20 md:w-28 bottom-24 right-4 md:right-20" delay={0.3} />
+      {/* Watercolour meadow (from "download (8)"), mirror-tiled along the bottom */}
+      <motion.div
+        className="absolute bottom-0 inset-x-0 h-40 sm:h-52 md:h-64 pointer-events-none mix-blend-multiply"
+        style={{
+          backgroundImage: "url('/sky/bow-meadow-strip.jpg')",
+          backgroundRepeat: 'repeat-x',
+          backgroundSize: 'auto 100%',
+          backgroundPosition: 'center bottom',
+          maskImage: 'linear-gradient(to top, #000 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to top, #000 60%, transparent 100%)',
+        }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+        aria-hidden="true"
+      />
+
+      {/* Top corner blooms */}
+      <Bloom variant={1} className="w-28 sm:w-36 md:w-48 -top-6 -left-8 md:-top-8 md:-left-10 z-20" />
+      <Bloom variant={2} className="w-24 sm:w-32 md:w-44 -top-6 -right-8 md:-top-8 md:-right-10 z-20" delay={0.3} />
 
       <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="flex flex-col items-center text-center pt-16">
+        <div className="flex flex-col items-center text-center pt-20 md:pt-28">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
