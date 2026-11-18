@@ -8,7 +8,7 @@ import { Bloom, SkyHeading, SkyOrnament } from './SkyDecor';
 
 // The Firestore project may be shared with other invitation sites, so every wish
 // is tagged and only this couple's wishes are shown.
-const COUPLE_ID = 'uvini-kalhara-2027';
+const COUPLE_ID = 'nethmi-ravindu-2027';
 
 interface Wish {
   id: string;
@@ -147,7 +147,7 @@ export const Wishes: React.FC = () => {
           <SkyHeading className="text-6xl md:text-8xl">Wishes</SkyHeading>
           <SkyOrnament label="For the happy couple" className="mt-2 [&>div]:w-8 sm:[&>div]:w-16 md:[&>div]:w-24" />
           <p className="text-sm md:text-base text-ink font-serif italic mt-6 max-w-xl px-2 leading-relaxed">
-            Leave a blessing, a memory or a few kind words for Uvini &amp; Kalhara as they begin their forever.
+            Leave a blessing, a memory or a few kind words for Nethmi &amp; Ravindu as they begin their forever.
           </p>
         </motion.div>
 

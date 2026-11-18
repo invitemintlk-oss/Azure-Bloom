@@ -236,7 +236,7 @@ export const HeroContent: React.FC = () => {
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.6, delay: 1.8, ease: 'easeOut' }}
               >
-                Uvini
+                Nethmi
               </motion.h1>
               <motion.span
                 className="font-script text-4xl sm:text-5xl text-[#C9A54C] leading-none -my-2 drop-shadow-[0_2px_6px_rgba(201,165,76,0.5)]"
@@ -252,7 +252,7 @@ export const HeroContent: React.FC = () => {
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.6, delay: 2.1, ease: 'easeOut' }}
               >
-                Kalhara
+                Ravindu
               </motion.h1>
             </div>
 

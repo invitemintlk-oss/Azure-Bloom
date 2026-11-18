@@ -139,8 +139,8 @@ export const RSVPForm: React.FC = () => {
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             {[
-              { n: 'Kalhara', t: '0756299807', tel: '+94756299807' },
-              { n: 'Uvini', t: '0703203824', tel: '+94703203824' },
+              { n: 'Ravindu', t: '0771234567', tel: '+94771234567' },
+              { n: 'Nethmi', t: '0777654321', tel: '+94777654321' },
             ].map((c) => (
               <a
                 key={c.n}
@@ -260,7 +260,7 @@ export const RSVPForm: React.FC = () => {
                   </button>
 
                   <a
-                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Uvini+%26+Kalhara+Wedding&dates=20270120T024500Z/20270120T100000Z&details=We+are+excited+to+celebrate+with+you!&location=The+Regent+Ballroom,+Earl's+Regency,+Kandy&sf=true&output=xml"
+                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nethmi+%26+Ravindu+Wedding&dates=20270120T024500Z/20270120T100000Z&details=We+are+excited+to+celebrate+with+you!&location=The+Regent+Ballroom,+Earl's+Regency,+Kandy&sf=true&output=xml"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center rounded-full border border-[#2f6aa3]/40 bg-white/70 py-4 text-[#2f6aa3] hover:bg-white transition-all"

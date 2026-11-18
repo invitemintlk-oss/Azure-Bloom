@@ -42,7 +42,7 @@ export const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter }) => {
             transition={{ duration: 0.8 }}
             className="relative z-10 w-full flex flex-col justify-end items-center pb-20 h-full text-center px-6"
           >
-            <p className="font-script text-5xl sm:text-6xl text-white drop-shadow-[0_4px_12px_rgba(15,39,66,0.8)]">Uvini &amp; Kalhara</p>
+            <p className="font-script text-5xl sm:text-6xl text-white drop-shadow-[0_4px_12px_rgba(15,39,66,0.8)]">Nethmi &amp; Ravindu</p>
             <p className="mt-2 mb-8 text-[11px] sm:text-xs tracking-[0.4em] uppercase text-[#cfe5f7] drop-shadow">20 · 01 · 2027</p>
             <button
               onClick={handlePlay}

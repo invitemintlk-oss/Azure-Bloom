@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, CalendarHeart, Users, Clock } from 'lucide-react';
+import { MapPin, CalendarHeart, Clock } from 'lucide-react';
 import { Bloom, SkyHeading, SkyOrnament } from './SkyDecor';
 
 const timeline = [
@@ -21,34 +21,6 @@ export const HomecomingDetails: React.FC = () => {
       <Bloom variant={2} spin className="w-36 md:w-52 bottom-10 -right-12 opacity-80" delay={0.4} />
 
       <div className="container px-4 md:px-6 mx-auto relative z-10 flex flex-col items-center">
-
-        {/* Together with our families */}
-        <motion.div
-          className="relative w-full max-w-3xl glass-sky rounded-[40px] p-8 md:p-14 flex flex-col items-center text-center mb-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="absolute inset-3 border border-[#5b9bd5]/25 rounded-[30px] pointer-events-none" />
-          <div className="w-14 h-14 rounded-full btn-sky flex items-center justify-center mb-5">
-            <Users className="w-6 h-6" strokeWidth={1.5} />
-          </div>
-          <SkyHeading className="text-4xl md:text-6xl mb-8">Together with Our Families</SkyHeading>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-            {[
-              { label: "Bride's Parents", a: 'Mr. Udaya Herath', b: 'Mrs. Nilangani Yatawara' },
-              { label: "Groom's Parents", a: 'Mr. Shantha Jayawardhana', b: 'Mrs. Indrani Rathnayake' },
-            ].map((p) => (
-              <div key={p.label} className="space-y-3">
-                <p className="text-[11px] md:text-xs text-[#2f6aa3] font-medium tracking-[0.3em] uppercase">{p.label}</p>
-                <p className="font-serif text-[#1b3f66] text-base md:text-lg leading-relaxed">
-                  {p.a}<br /><span className="font-script text-2xl text-[#5b9bd5]">&amp;</span><br />{p.b}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Section Header */}
         <motion.div

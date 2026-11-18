@@ -48,13 +48,13 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 text-white/70 tracking-[0.1em] text-sm">
               <p>Wednesday, 20th January 2027</p>
               <p>The Regent Ballroom, Earl's Regency, Kandy</p>
-              <p className="text-[#cfe5f7] italic mt-4 font-serif tracking-widest text-xs">#Uvini&amp;Kalhara2027</p>
+              <p className="text-[#cfe5f7] italic mt-4 font-serif tracking-widest text-xs">#Nethmi&amp;Ravindu2027</p>
             </div>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 text-center flex flex-col items-center">
-          <p className="text-[#8ec3ec]/80 text-[10px] md:text-xs tracking-[0.2em] uppercase">© 2027 Uvini &amp; Kalhara's Wedding</p>
+          <p className="text-[#8ec3ec]/80 text-[10px] md:text-xs tracking-[0.2em] uppercase">© 2027 Nethmi &amp; Ravindu's Wedding</p>
           <p className="text-white/40 text-[10px] mt-4 tracking-[0.1em]">
             Want a beautiful wedding website like this? Create yours with{' '}
             <a target="_blank" rel="noreferrer" className="text-[#8ec3ec] hover:text-white transition-colors underline underline-offset-2" href="https://wa.me/94707819074">

@@ -70,9 +70,9 @@ export const HappyCouple: React.FC = () => {
         >
           <Medallion letter="K" flower={1} />
           <Person
-            name="Kalhara"
+            name="Ravindu"
             role="The Groom"
-            parents={<>Son of Mr. Shantha Jayawardhana &amp;<br className="hidden sm:block" /> Mrs. Indrani Rathnayake</>}
+            parents={<>Son of Mr. Sunil Perera &amp;<br className="hidden sm:block" /> Mrs. Kamala Perera</>}
           />
         </motion.div>
 
@@ -84,9 +84,9 @@ export const HappyCouple: React.FC = () => {
           transition={{ duration: 1 }}
         >
           <Person
-            name="Uvini"
+            name="Nethmi"
             role="The Bride"
-            parents={<>Daughter of Mr. Udaya Herath &amp;<br className="hidden sm:block" /> Mrs. Nilangani Yatawara</>}
+            parents={<>Daughter of Mr. Ajith Fernando &amp;<br className="hidden sm:block" /> Mrs. Dilani Fernando</>}
           />
           <Medallion letter="U" flower={2} />
         </motion.div>
