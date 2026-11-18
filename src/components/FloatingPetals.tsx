@@ -8,65 +8,47 @@ interface Petal {
   rotation: number;
   duration: number;
   delay: number;
-  color: string;
+  variant: 1 | 2;
   drift: number;
 }
 
+/** Gently falling sky-blue blooms across the whole page. */
 export const FloatingPetals: React.FC = () => {
   const [petals, setPetals] = useState<Petal[]>([]);
 
   useEffect(() => {
-    const colors = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#7F1D1D'];
-    const newPetals = Array.from({ length: 8 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      size: Math.random() * 15 + 15,
-      rotation: Math.random() * 360,
-      duration: Math.random() * 15 + 15,
-      delay: Math.random() * 20,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      drift: Math.random() * 40 - 20,
-    }));
-    setPetals(newPetals);
+    setPetals(
+      Array.from({ length: 9 }).map((_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        size: Math.random() * 18 + 16,
+        rotation: Math.random() * 360,
+        duration: Math.random() * 14 + 18,
+        delay: Math.random() * 20,
+        variant: (i % 2 === 0 ? 1 : 2) as 1 | 2,
+        drift: Math.random() * 40 - 20,
+      }))
+    );
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-40">
-      {petals.map((petal) => (
-        <motion.div
-          key={petal.id}
-          className="absolute"
-          style={{ color: petal.color }}
-          initial={{
-            x: `${petal.x}vw`,
-            y: '-10vh',
-            rotate: petal.rotation,
-            opacity: 0
-          }}
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-40" aria-hidden="true">
+      {petals.map((p) => (
+        <motion.img
+          key={p.id}
+          src={`/sky/flower-${p.variant}.png`}
+          alt=""
+          className="absolute top-0 left-0 drop-shadow-[0_4px_8px_rgba(47,106,163,0.3)]"
+          style={{ width: p.size, height: p.size }}
+          initial={{ x: `${p.x}vw`, y: '-10vh', rotate: p.rotation, opacity: 0 }}
           animate={{
             y: '110vh',
-            x: `${petal.x + petal.drift}vw`,
-            rotate: petal.rotation + 720,
-            opacity: [0, 0.8, 0.8, 0]
+            x: `${p.x + p.drift}vw`,
+            rotate: p.rotation + 540,
+            opacity: [0, 0.85, 0.85, 0],
           }}
-          transition={{
-            duration: petal.duration,
-            repeat: Infinity,
-            delay: petal.delay,
-            ease: "linear"
-          }}
-        >
-          <svg
-            width={petal.size}
-            height={petal.size}
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="drop-shadow-sm"
-            style={{ filter: 'brightness(1.1) saturate(1.2) drop-shadow(0 0 10px rgba(153, 27, 27, 0.5))' }}
-          >
-            <path d="M12,2C12,2 10,6 10,10C10,14 12,22 12,22C12,22 14,14 14,10C14,6 12,2 12,2Z" />
-          </svg>
-        </motion.div>
+          transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: 'linear' }}
+        />
       ))}
     </div>
   );

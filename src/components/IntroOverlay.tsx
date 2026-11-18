@@ -12,34 +12,43 @@ export const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter }) => {
   const handlePlay = () => {
     if (videoRef.current) {
       setIsPlaying(true);
-      videoRef.current.play().catch(e => console.error("Playback failed", e));
+      videoRef.current.play().catch((e) => {
+        console.error('Playback failed', e);
+        onEnter();
+      });
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden bg-black">
-      <video 
+    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden bg-[#0f2742]">
+      <video
         ref={videoRef}
-        muted 
-        playsInline 
+        muted
+        playsInline
+        preload="auto"
         onEnded={onEnter}
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/Wedding_envelope_opens_with_light_202608040131.mp4" type="video/mp4" />
+        <source src="/gemini_generated_video_ee76e431.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-      
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0f2742]/60 via-transparent to-[#0f2742]/30 pointer-events-none" />
+
       <AnimatePresence>
         {!isPlaying && (
-          <motion.div 
-            initial={{ opacity: 1 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="relative z-10 w-full flex flex-col justify-end items-center pb-24 h-full"
+            transition={{ duration: 0.8 }}
+            className="relative z-10 w-full flex flex-col justify-end items-center pb-20 h-full text-center px-6"
           >
-            <button 
+            <p className="font-script text-5xl sm:text-6xl text-white drop-shadow-[0_4px_12px_rgba(15,39,66,0.8)]">Uvini &amp; Kalhara</p>
+            <p className="mt-2 mb-8 text-[11px] sm:text-xs tracking-[0.4em] uppercase text-[#cfe5f7] drop-shadow">20 · 01 · 2027</p>
+            <button
               onClick={handlePlay}
-              className="font-sans px-10 py-4 bg-[#064e3b]/80 backdrop-blur-md text-[#D4AF37] border border-[#D4AF37]/50 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:bg-[#D4AF37] hover:text-black hover:scale-105 transition-all duration-300 uppercase tracking-[0.3em] text-xs sm:text-sm"
+              className="relative font-sans px-10 py-4 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/60 shadow-[0_10px_40px_rgba(91,155,213,0.6)] hover:bg-white hover:text-[#1b3f66] hover:scale-105 transition-all duration-300 uppercase tracking-[0.3em] text-xs sm:text-sm"
             >
+              <span className="absolute inset-0 rounded-full border border-white/50 animate-ping opacity-40" />
               Open Invitation
             </button>
           </motion.div>

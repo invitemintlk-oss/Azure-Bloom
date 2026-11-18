@@ -11,6 +11,7 @@ import { NoteFromUs } from './components/NoteFromUs';
 // Removed Timeline import
 
 import { RSVPForm } from './components/RSVPForm';
+import { Wishes } from './components/Wishes';
 import { Footer } from './components/Footer';
 import { IntroVideo } from './components/IntroVideo';
 import { IntroOverlay } from './components/IntroOverlay';
@@ -29,12 +30,7 @@ export default function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const inviteType = searchParams.get('invite') || 'both';
-
-  const weddingDate = inviteType === 'homecoming' 
-    ? new Date('2026-12-06T19:00:00') 
-    : new Date('2026-12-05T10:30:00');
+  const weddingDate = new Date('2027-01-20T08:15:00+05:30');
 
   const startMusic = () => {
     if (audioRef.current && !isMusicPlaying) {
@@ -74,7 +70,7 @@ export default function App() {
   }, [isMusicPlaying]);
 
   return (
-    <div className="relative min-h-screen font-sans selection:bg-brand-gold selection:text-white overflow-x-hidden bg-brand-ivory">
+    <div className="relative min-h-screen font-sans selection:bg-[#5b9bd5] selection:text-white overflow-x-hidden bg-brand-ivory">
       <FloatingPetals />
       
       {/* Background Music */}
@@ -116,9 +112,9 @@ export default function App() {
             {/* Music Toggle Button */}
             <button
               onClick={toggleMusic}
-              className="fixed bottom-8 right-8 z-[60] w-14 h-14 glass rounded-full flex items-center justify-center text-brand-gold-deep hover:bg-stone-800 hover:text-brand-champagne transition-all active:scale-90 shadow-2xl group"
+              className="fixed bottom-8 right-8 z-[60] w-14 h-14 glass rounded-full flex items-center justify-center text-brand-gold-deep hover:bg-[#2f6aa3] hover:text-white transition-all active:scale-90 shadow-2xl group"
             >
-              <div className="absolute inset-0 rounded-full border border-brand-gold/20 scale-110 group-hover:scale-125 transition-transform" />
+              <div className="absolute inset-0 rounded-full border border-[#5b9bd5]/40 scale-110 group-hover:scale-125 transition-transform" />
               {isMusicPlaying ? <Volume2 className="w-6 h-6" /> : <VolumeX className="w-6 h-6" />}
             </button>
 
@@ -139,6 +135,8 @@ export default function App() {
             <NoteFromUs />
 
             <RSVPForm />
+
+            <Wishes />
 
             <Footer />
           </motion.main>
