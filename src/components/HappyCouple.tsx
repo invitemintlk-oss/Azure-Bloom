@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Bloom, SkyHeading, SkyOrnament } from './SkyDecor';
 
-/** Oval monogram medallion with layered sky/gold rings. */
-const Medallion: React.FC<{ letter: string; flower: 1 | 2 }> = ({ letter, flower }) => (
+/** Oval portrait medallion with layered sky/gold rings. */
+const Medallion: React.FC<{ image: string; alt: string; flower: 1 | 2 }> = ({ image, alt, flower }) => (
   <div className="relative w-32 sm:w-40 md:w-48 aspect-[3/4] shrink-0">
     <div className="absolute -inset-2 rounded-[50%] border border-[#C9A54C]/60" />
     <div className="absolute inset-0 rounded-[50%] glass-sky flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-2 rounded-[50%] border border-[#5b9bd5]/40" />
-      <span className="font-script text-sky-shimmer text-7xl sm:text-8xl md:text-9xl leading-none pt-4">{letter}</span>
+      <img src={image} alt={alt} loading="lazy" className="absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] rounded-[50%] object-cover object-top" />
+      <div className="absolute inset-1.5 rounded-[50%] border border-white/70 pointer-events-none" />
     </div>
     <img
       src={`/sky/flower-${flower}.png`}
@@ -68,7 +68,7 @@ export const HappyCouple: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <Medallion letter="K" flower={1} />
+          <Medallion image="/sky/groom-sample.webp" alt="The groom" flower={1} />
           <Person
             name="Ravindu"
             role="The Groom"
@@ -88,7 +88,7 @@ export const HappyCouple: React.FC = () => {
             role="The Bride"
             parents={<>Daughter of Mr. Ajith Fernando &amp;<br className="hidden sm:block" /> Mrs. Dilani Fernando</>}
           />
-          <Medallion letter="U" flower={2} />
+          <Medallion image="/sky/bride-sample.webp" alt="The bride" flower={2} />
         </motion.div>
       </div>
     </section>
