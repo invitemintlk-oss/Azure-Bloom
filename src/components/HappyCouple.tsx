@@ -7,7 +7,7 @@ const Medallion: React.FC<{ image: string; alt: string; flower: 1 | 2 }> = ({ im
   <div className="relative w-32 sm:w-40 md:w-48 aspect-[3/4] shrink-0">
     <div className="absolute -inset-2 rounded-[50%] border border-[#C9A54C]/60" />
     <div className="absolute inset-0 rounded-[50%] glass-sky flex items-center justify-center overflow-hidden">
-      <img src={image} alt={alt} loading="lazy" className="absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] rounded-[50%] object-cover object-top" />
+      <img src={image} alt={alt} loading="lazy" className="absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] rounded-[50%] object-cover object-[50%_20%]" />
       <div className="absolute inset-1.5 rounded-[50%] border border-white/70 pointer-events-none" />
     </div>
     <img
